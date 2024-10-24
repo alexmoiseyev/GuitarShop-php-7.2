@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+.wrapper{
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.container{
+    max-width: 1260px;
+    padding: 0 15px;
+    margin: 0 auto;
+    height: 100%;
+}
+.img__block{
+    
+}
+.img__block img{
+    max-width: 1000px;
+    max-height: 700px;
+}

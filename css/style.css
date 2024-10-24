@@ -1,0 +1,309 @@
+*{
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    background-color: #aed8ef;
+}
+p,a,h1,h2,span{
+    color: #000000;
+}
+.menu_btn{
+    display: none;
+}
+.wrapper{
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.container{
+    max-width: 1260px;
+    padding: 0 15px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+
+.header {
+    padding: 30px;
+    background: #707070;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+}
+.container__flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.header__logo {
+    height: 50px;
+    width: 50px;
+    color: white;
+    margin-right: auto;
+}
+.header__logo:hover {
+    scale: 130%;
+}
+.header__login-sigin {
+    padding: 10px;
+    background: #ffffff;
+}
+.header__login-sigin:hover {
+    scale: 120%;
+}
+
+.header__login-register a:hover{
+    color: rgb(106, 106, 106);
+    font-size: 12px;
+}
+.header__account{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    max-width: 120px;
+}
+.header__account-btn{
+    text-align: center;  
+    white-space: nowrap; /* Текст не переносится */
+    overflow: hidden; /* Обрезаем всё за пределами блока */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    transition: .3s;
+}
+.header__account-btn:hover{
+    text-align: center;  
+    white-space: wrap; 
+    overflow:visible; 
+    text-overflow:clip; 
+    cursor: pointer;
+    scale: 120%;
+}
+.header__account-btn a{
+    background: #ffffff;
+}
+.search__form{
+    margin-right: auto;
+}
+input::-webkit-input-placeholder {
+    font-style: italic; 
+    
+  }
+  input:-moz-placeholder {
+    font-style: italic; 
+  }
+  input:-ms-input-placeholder {
+    font-style: italic; 
+  }
+.header__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+.header__list-item {
+    margin-left: 6px;
+    margin-right: 30px;
+    margin-top: 8px;
+}
+.header__list-item:hover {
+    scale: 120%;
+}
+.header__list-item:last-child {
+    margin: 0;
+}
+@media(max-width: 700px){
+    .header__list-item a{
+        font-size: 10px;
+    }
+}
+@media(max-width: 700px){
+    .header__list{
+        display: none;
+    }
+    .menu_btn{
+        display: block;
+    }
+}
+@media(max-width: 400px){
+    .header__logo{
+        height: 34px;
+        width: 34px;
+    }
+}
+.main {
+    margin: 40px;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+}
+.container {
+}
+.card__block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.card {
+    display: inline-flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+.card__type{
+    display: inline-block;
+    text-align: center;
+    padding: 6px;
+    background-color: #ffffff;
+}
+.card__title {
+    text-align: center;
+    background: #757575;
+    padding: 10px;
+}
+.card__img{
+    max-width: 300px;
+    min-width: 300px;
+    max-height: 300px;
+    min-height: 300px;
+}
+.card__text {
+    padding: 12px;
+    background: #757575;
+}
+.modal {
+    position: fixed; /* фиксированное положение */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5); /* фон */
+    z-index: 1050;
+    opacity: 0; /* по умолчанию модальное окно прозрачно */
+    -webkit-transition: opacity 200ms ease-in; 
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 200ms ease-in; /* анимация перехода */
+    pointer-events: none; /* элемент невидим для событий мыши */
+    margin: 0;
+    padding: 0;
+}
+/* При отображении модального окно */
+.modal:target {
+    opacity: 1; /* делаем окно видимым */
+	  pointer-events: auto; /* элемент видим для событий мыши */
+    overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+}
+/* ширина модального окна и его отступы от экрана */
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+/* Стили для блока с контентом окна */ 
+.modal-content {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #ffffff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+}
+
+/* /////////////////////Стили заголовка окна///////////////////////// */
+.modal-header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #858282;
+}
+.modal-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+/* Стили кнопки "х" ("Закрыть")  */
+.close {
+    float: right;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000000;
+    text-shadow: 0 1px 0 #181818;
+    opacity: .5;
+    text-decoration: none;
+}
+/* Стили для закрывающей кнопки в фокусе или наведении */
+.close:focus, .close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .75;
+}
+/* Стили блока основного содержимого окна */
+.modal-body {
+  position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 15px;
+    overflow: auto;
+}
+.modal-body_box{
+    text-align: center;
+}
+.modal__btn{
+    
+}
+.modal__btn a:hover{
+    font-size: 13px;
+}
+
+.img__block{
+    
+}
+.img__block img{
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+}
+.img__block-desc{
+    text-align: center;
+    font-size: 20px;
+}
+.img__btn{
+    display: block;
+    margin: 0 auto;
+    font-size: 30px;
+    background: #61cd8e;
+    transition: .3s;
+}
+.img__btn:hover{
+    scale: 120%;
+    color: white;
+    cursor: pointer;
+}
